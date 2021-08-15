@@ -1,0 +1,113 @@
+@import "./reset.scss";
+
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+// paragraphs
+$transparent-white: hsla(0, 0%, 100%, 0.75);
+// background, headings, buttons
+$very-light-gray: hsl(0, 0%, 95%);
+
+.container {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: hsl(0, 0%, 71%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .cards {
+    display: flex;
+    max-width: 74rem;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .card {
+      min-height: 43rem;
+      margin: auto;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 4rem;
+      padding: 3.5rem;
+
+      &:nth-child(1) {
+        background-color: $bright-orange;
+
+        .card__button {
+          color: $bright-orange;
+        }
+      }
+
+      &:nth-child(2) {
+        background-color: $dark-cyan;
+
+        .card__button {
+          color: $dark-cyan;
+        }
+      }
+
+      &:nth-child(3) {
+        background-color: $very-dark-cyan;
+
+        .card__button {
+          color: $very-dark-cyan;
+        }
+      }
+
+      &__image {
+        display: block;
+        height: 4rem;
+        width: 6.4rem;
+      }
+
+      &__title {
+        font-size: 3rem;
+        color: $very-light-gray;
+        text-transform: uppercase;
+        font-family: "Big Shoulders Display";
+        font-weight: 700;
+      }
+
+      &__text {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        color: $transparent-white;
+        font-weight: 400;
+        font-family: "Lexend Deca";
+      }
+
+      &__button {
+        background-color: $very-light-gray;
+        cursor: pointer;
+        border: 2px solid $very-light-gray;
+        border-radius: 100px;
+        width: 12rem;
+        padding: 1rem 2rem;
+        margin-top: auto;
+        transition: transform 0.2s;
+
+        &:hover {
+          color: $very-light-gray !important;
+          background-color: transparent;
+        }
+
+        &:active {
+          transform: scale(1.1);
+          outline: none;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      flex-direction: column;
+      margin: 4rem;
+    }
+  }
+
+  .attribution {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+}
